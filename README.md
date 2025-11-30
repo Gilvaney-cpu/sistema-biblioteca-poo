@@ -3,10 +3,9 @@
 Projeto da disciplina de Programação Orientada a Objetos. O sistema gerencia empréstimos de livros para alunos e professores, aplicando conceitos de POO como Herança, Polimorfismo e Encapsulamento.
 
 ## 👥 Equipe
-* **Membro 1 (Model/Exceções):** [Nome]
-* **Membro 2 (Service Usuários):** [Nome]
-* **Membro 3 (Service Livros):** [Nome]
-* **Membro 4 (View/GUI):** [Nome]
+* **Membro 1:** [Gilvaney Leandro]
+* **Membro 2:** [Nome]
+* **Membro 3:** [Nome]
 
 ## 🛠️ Arquitetura do Projeto
 O projeto segue a arquitetura em camadas (MVC simplificado):
