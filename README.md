@@ -4,8 +4,8 @@ Projeto da disciplina de Programação Orientada a Objetos. O sistema gerencia e
 
 ## 👥 Equipe
 * **Membro 1:** [Gilvaney Leandro]
-* **Membro 2:** [Nome]
-* **Membro 3:** [Nome]
+* **Membro 2:** [Fábio André]
+* **Membro 3:** [Rafaelly Cristine]
 
 ## 🛠️ Arquitetura do Projeto
 O projeto segue a arquitetura em camadas (MVC simplificado):
