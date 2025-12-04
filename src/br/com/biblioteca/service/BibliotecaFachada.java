@@ -168,6 +168,7 @@ public class BibliotecaFachada {
     public List<Emprestimo> listarEmprestimos() {
         return repositorioEmprestimos.listarTodos();
     }
+// Alteração mínima para forçar commit
 
     // --- DADOS INICIAIS (Para teste) ---
     private void inicializarDadosTeste() {
