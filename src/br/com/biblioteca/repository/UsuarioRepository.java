@@ -8,39 +8,25 @@ import br.com.biblioteca.model.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioRepository {
-    private List<Usuario> usuarios;
+public class UsuarioRepository implements IRepositorio<Usuario> {
+    private List<Usuario> usuarios = new ArrayList<>();
 
-    public UsuarioRepository() {
-        usuarios = new ArrayList<>();
+    @Override
+    public void salvar(Usuario obj) {
+        usuarios.add(obj);
     }
 
-    // Adicionar usuário
-    public void adicionar(Usuario usuario) {
-        usuarios.add(usuario);
-    }
-
-    // Buscar por matrícula
-    public Usuario buscarPorMatricula(int matricula) {
+    @Override
+    public Usuario buscarPorId(int id) {
         for (Usuario u : usuarios) {
-            if (u.getMatricula() == matricula) {
+            if (u.getMatricula() == id) {
                 return u;
             }
         }
         return null;
     }
 
-    // Remover usuário
-    public boolean remover(int matricula) {
-        Usuario u = buscarPorMatricula(matricula);
-        if (u != null) {
-            usuarios.remove(u);
-            return true;
-        }
-        return false;
-    }
-
-    // Listar todos
+    @Override
     public List<Usuario> listarTodos() {
         return usuarios;
     }

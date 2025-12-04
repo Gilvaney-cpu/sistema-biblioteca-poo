@@ -5,7 +5,7 @@
 package br.com.biblioteca.exception;
 
 public class LivroIndisponivelException extends RuntimeException {
-    public LivroIndisponivelException(String mensagem) {
-        super(mensagem);
+    public LivroIndisponivelException(String msg) {
+        super(msg);
     }
 }

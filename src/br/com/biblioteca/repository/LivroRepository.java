@@ -8,19 +8,15 @@ import br.com.biblioteca.model.Livro;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LivroRepository {
-    private List<Livro> livros;
+public class LivroRepository implements IRepositorio<Livro> {
+    private List<Livro> livros = new ArrayList<>();
 
-    public LivroRepository() {
-        livros = new ArrayList<>();
+    @Override
+    public void salvar(Livro obj) {
+        livros.add(obj);
     }
 
-    // Adicionar livro
-    public void adicionar(Livro livro) {
-        livros.add(livro);
-    }
-
-    // Buscar por ID
+    @Override
     public Livro buscarPorId(int id) {
         for (Livro l : livros) {
             if (l.getId() == id) {
@@ -30,27 +26,7 @@ public class LivroRepository {
         return null;
     }
 
-    // Buscar por título
-    public Livro buscarPorTitulo(String titulo) {
-        for (Livro l : livros) {
-            if (l.getTitulo().equalsIgnoreCase(titulo)) {
-                return l;
-            }
-        }
-        return null;
-    }
-
-    // Remover livro
-    public boolean remover(int id) {
-        Livro l = buscarPorId(id);
-        if (l != null) {
-            livros.remove(l);
-            return true;
-        }
-        return false;
-    }
-
-    // Listar todos
+    @Override
     public List<Livro> listarTodos() {
         return livros;
     }

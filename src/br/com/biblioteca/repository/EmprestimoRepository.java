@@ -8,19 +8,15 @@ import br.com.biblioteca.model.Emprestimo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmprestimoRepository {
-    private List<Emprestimo> emprestimos;
+public class EmprestimoRepository implements IRepositorio<Emprestimo> {
+    private List<Emprestimo> emprestimos = new ArrayList<>();
 
-    public EmprestimoRepository() {
-        emprestimos = new ArrayList<>();
+    @Override
+    public void salvar(Emprestimo obj) {
+        emprestimos.add(obj);
     }
 
-    // Adicionar empréstimo
-    public void adicionar(Emprestimo emprestimo) {
-        emprestimos.add(emprestimo);
-    }
-
-    // Buscar por ID
+    @Override
     public Emprestimo buscarPorId(int id) {
         for (Emprestimo e : emprestimos) {
             if (e.getId() == id) {
@@ -30,28 +26,7 @@ public class EmprestimoRepository {
         return null;
     }
 
-    // Buscar por matrícula do usuário
-    public List<Emprestimo> buscarPorUsuario(int matriculaUsuario) {
-        List<Emprestimo> resultado = new ArrayList<>();
-        for (Emprestimo e : emprestimos) {
-            if (e.getMatriculaUsuario() == matriculaUsuario) {
-                resultado.add(e);
-            }
-        }
-        return resultado;
-    }
-
-    // Remover empréstimo
-    public boolean remover(int id) {
-        Emprestimo e = buscarPorId(id);
-        if (e != null) {
-            emprestimos.remove(e);
-            return true;
-        }
-        return false;
-    }
-
-    // Listar todos
+    @Override
     public List<Emprestimo> listarTodos() {
         return emprestimos;
     }

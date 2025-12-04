@@ -4,12 +4,13 @@ import java.time.LocalDate;
 
 public class Professor extends Usuario {
 
-    public Professor(int matricula, String nome, String senha, LocalDate dataNascimento) {
-        super(matricula, nome, senha, dataNascimento);
+    public Professor(int matricula, String nome, String senha, LocalDate dataCadastro) {
+        super(matricula, nome, senha, dataCadastro);
     }
 
-    @Override
-    public int getLimiteCreditos() {
-        return 10; // Professor pode pegar 10 livros
+    // Caso queira diferenciar regras de negócio:
+    // Exemplo: prazo maior para empréstimos
+    public int getPrazoEmprestimo() {
+        return 14; // Professores têm 14 dias de prazo
     }
 }
